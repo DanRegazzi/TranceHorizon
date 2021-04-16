@@ -1,16 +1,21 @@
 const Bundler = require('parcel-bundler');
-const server = require('express')();
+const express = require('express');
+const server = express();
+
+server.use(express.static('dist'))
 
 require('dotenv').config();
 
-const file = 'client/index.html'; // Pass an absolute path to the entrypoint here
-const bundlerOptions = { production: process.env.NODE_ENV === 'production' };
+server.listen(process.env.PORT, '0.0.0.0', () => console.log('Listening on port: ' + process.env.PORT));
+
+//const file = 'client/index.html'; // Pass an absolute path to the entrypoint here
+//const bundlerOptions = { production: process.env.NODE_ENV === 'production' };
 
 // Initialize a new bundler using a file and options
-const bundler = new Bundler(file, bundlerOptions);
+//const bundler = new Bundler(file, bundlerOptions);
 
 // Let express use the bundler middleware, this will let Parcel handle every request over your express server
-server.use(bundler.middleware());
+//server.use(bundler.middleware());
 
 // Listen on EvenNode Port
-server.listen(process.env.PORT, '0.0.0.0', () => console.log('Listening on port: ' + process.env.PORT));
+//server.listen(process.env.PORT, '0.0.0.0', () => console.log('Listening on port: ' + process.env.PORT));

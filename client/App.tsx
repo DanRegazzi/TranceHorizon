@@ -11,7 +11,7 @@ class App extends React.Component<Props> {
     return (
       <>
         <h1>
-          Hoi, {name}
+          Hallo, {name}
         </h1>
       </>
     );
