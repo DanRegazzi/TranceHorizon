@@ -1,4 +1,3 @@
-const Bundler = require('parcel-bundler');
 const express = require('express');
 const server = express();
 
