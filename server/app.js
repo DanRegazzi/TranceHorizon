@@ -13,4 +13,4 @@ const bundler = new Bundler(file, bundlerOptions);
 server.use(bundler.middleware());
 
 // Listen on EvenNode Port
-server.listen(process.env.PORT, () => console.log('Listening on port: ' + process.env.PORT));
+server.listen(process.env.PORT, '0.0.0.0', () => console.log('Listening on port: ' + process.env.PORT));
