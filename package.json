@@ -6,7 +6,8 @@
   "scripts": {
     "build-watch": "parcel watch ./client/index.html",
     "build": "parcel build ./client/index.html",
-    "start": "npm run build && node server/app.js",
+    "start": "node server/app.js",
+    "start2": "npm run build && node server/app.js",
     "test": "jest"
   },
   "keywords": [],
